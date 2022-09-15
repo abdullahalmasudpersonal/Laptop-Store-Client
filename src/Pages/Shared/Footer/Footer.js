@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer2 = () => {
+const Footer = () => {
     return (
         <div className='footer2-bg'>
             <footer class="text-center text-lg-start text-muted container">
@@ -113,4 +113,4 @@ const Footer2 = () => {
     );
 };
 
-export default Footer2;
+export default Footer;

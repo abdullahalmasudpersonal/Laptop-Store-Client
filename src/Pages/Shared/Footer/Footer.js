@@ -36,7 +36,7 @@ const Footer = () => {
 
                             <div class="col-md-3 col-lg-4 col-xl-3 ms-0 mb-4">
                                 <h6 class="text-uppercase fw-bold mb-4">
-                                    Computer Accessories Warehouse
+                                    Laptop Store
                                 </h6>
                                 <p>
                                     Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -106,7 +106,7 @@ const Footer = () => {
             </footer>
             <div class="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', color:'gray' }}>
                 © 2022
-                <a class="text-reset fw-bold"> Computer Accessories Warehouse</a>
+                <a class="text-reset fw-bold"> Laptop Store</a>
             </div>
 
         </div>

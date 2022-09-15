@@ -7,6 +7,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import ConnectUs from './Pages/ConnectUs/ConnectUs';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
 import ManageProducts from './Pages/ManageProducts/ManageProducts';
 import Prodcuts from './Pages/Products/Products/Prodcuts';
 import Reviews from './Pages/Reviews/Reviews';
@@ -27,6 +28,7 @@ function App() {
         <Route path='/add-product' element={<AddProduct />} />
         <Route path='/manage-products' element={<ManageProducts />} />
         <Route path='/my-order' element={<ManageProducts />} />
+        <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
       </Routes>
       <Footer />

@@ -1,0 +1,45 @@
+.login-bg{
+    background-color: rgb(247, 251, 255);
+}
+.login{
+    height: 700px;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.login-dev{
+    height: 450px;
+    width: 280px;
+    background-color: rgb(223, 240, 255);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.login-color{
+    color: rgb(67, 167, 255);
+}
+.input-field{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.input-field input{
+    width: 250px;
+    height: 37px;
+    border-radius: 50px;
+}
+.input-field input:hover{
+    border: none;
+}
+.reset-password{
+    color: gray;
+    transition: .3s;
+}
+.reset-password:hover{
+    cursor: pointer;
+    color: red;
+}
+.please-register-text-color:hover{
+    transition: .3s;
+    color: rgb(0, 153, 255);
+}

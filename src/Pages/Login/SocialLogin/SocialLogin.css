@@ -1,0 +1,12 @@
+
+.continue-with-google{
+    background: #c5e4ff;
+    height: 40px;
+    border-radius: 50px;
+    transition: .3s;
+    color: rgb(67, 167, 255);
+    font-weight: bold;
+}
+.continue-with-google:hover{
+    background-color: rgb(181, 221, 255);
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../Assets/img/logo/images__2___1_-removebg-preview.png';
 import './Header.css';
 
 const Header = () => {
@@ -7,7 +8,8 @@ const Header = () => {
         <div className='navber-bg fixed-top'>
             <div className=''>
                 <nav class="navbar navbar-expand-lg container navber-bg">
-                    <Link to='/'><a class="navbar-brand" href="#">Navbar</a></Link>
+                    <Link to='/'><img class="navbar-brand" src={logo} height='40px
+                    ' alt='' /></Link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

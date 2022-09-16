@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Review from '../../Reviews/Review';
 import CarouselFadeExample from '../Banner/Banner';
+import BestSellingLaptop from '../BestSellingLaptop/BestSellingLaptop';
 import LaptopStoreCount from '../LaptopStoreCount/LaptopStoreCount';
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
                 </div>
             </div>
             {/* home review start */}
+            <BestSellingLaptop/>
         </div>
     );
 };

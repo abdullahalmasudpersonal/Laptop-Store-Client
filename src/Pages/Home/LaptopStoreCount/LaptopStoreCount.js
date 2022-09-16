@@ -6,7 +6,7 @@ import { faBuildingColumns, faComment, faCommentDots, faCommenting, faCommentMed
 
 const LaptopStoreCount = () => {
     return (
-        <div>
+        <div  className='laptopstore-bg'>
             <div className='count-heading'>
                 <h2 className='fw-bold'>MUUSM OF NUMBERS</h2>
             </div>

@@ -1,0 +1,17 @@
+.review-dev {
+    height: 300px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: aliceblue;
+    margin: auto;
+}
+.review-dev img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.review-ratting {
+    width: 25px !important;
+    height: 25px !important;
+}

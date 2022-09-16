@@ -3,8 +3,12 @@ import './Reviews.css';
 
 const Reviews = () => {
     return (
-        <div className='container'>
-            <h6>Reviews</h6>
+        <div className='container pb-5'>
+            <h3 className='text-center pt-5 pb-5'>Reviews</h3>
+            <div className='review-dev'>
+
+            </div>
+
         </div>
     );
 };

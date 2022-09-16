@@ -23,9 +23,9 @@ const Header2 = () => {
                 <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
+                <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                       {/*  <li class="nav-item">
                             <Link to='/products' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="">Products</a></Link>
                         </li>
                         <li class="nav-item">
@@ -39,22 +39,39 @@ const Header2 = () => {
                         </li>
                         <li class="nav-item">
                             <Link to='/connect-us' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Connect Us</a></Link>
-                        </li>
+                        </li> */}
                     </ul>
 
                     <div className='d-flex'>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             {
                                 /*   user && */
+                                /*  <>
+                                     <li class="nav-item">
+                                         <Link to='/add-product' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Add Item</a></Link>
+                                     </li>
+                                     <li class="nav-item">
+                                         <Link to='/manage-products' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Manage Item</a></Link>
+                                     </li>
+                                     <li class="nav-item">
+                                         <Link to='/my-item' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">My Item</a></Link>
+                                     </li>
+                                 </> */
                                 <>
                                     <li class="nav-item">
-                                        <Link to='/add-product' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Add Item</a></Link>
+                                        <Link to='/products' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="">Products</a></Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link to='/manage-products' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Manage Item</a></Link>
+                                        <Link to='/about' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">About</a></Link>
                                     </li>
                                     <li class="nav-item">
-                                        <Link to='/my-item' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">My Item</a></Link>
+                                        <Link to='/reviews' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="">Reviews</a></Link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <Link to='/blogs' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Blogs</a></Link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <Link to='/connect-us' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Connect Us</a></Link>
                                     </li>
                                 </>
                             }

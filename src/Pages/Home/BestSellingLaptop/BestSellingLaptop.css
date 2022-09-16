@@ -2,6 +2,13 @@
 .bestsellinglaptop-bg{
     background-color: rgb(245, 251, 255);
 }
+.best-selling-title{
+    color: rgb(16, 120, 255);
+}
+.best-selling-laptop{
+    font-weight: bold;
+    color: rgb(38, 24, 241);
+}
 .read-more-btn {
    background-color: rgb(101, 183, 255);
     border: none;

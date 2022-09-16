@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import UseProducts from '../../../Hooks/UseProducts';
+import Product from '../../Products/Product/Product';
 import Review from '../../Reviews/Review';
 import CarouselFadeExample from '../Banner/Banner';
 import BestSellingLaptop from '../BestSellingLaptop/BestSellingLaptop';
 import LaptopStoreCount from '../LaptopStoreCount/LaptopStoreCount';
+import LearnMoreBestSelling from '../LearnMoreBestSelling/LearnMoreBestSelling';
 
 const Home = () => {
     const [review, setReview] = useState([]);
+    const [products, setProducts] = UseProducts([]);
 
     useEffect( () =>{
         fetch('review.json')
@@ -16,6 +20,15 @@ const Home = () => {
     return (
         <div>
             <CarouselFadeExample />
+            {/* home product start */}
+            <div className='inventories-bg'>
+            <div className='container-xxl inventories py-5'>
+                {
+                    products.slice(0,8).map(product => <Product key={product._id} product={product} />)
+                }
+            </div>
+        </div>
+            {/* home product end */}
             <LaptopStoreCount />
             {/* home review start */}
             <div className='reviews pb-5'>
@@ -29,6 +42,7 @@ const Home = () => {
                 </div>
             </div>
             {/* home review start */}
+            <LearnMoreBestSelling/>
             <BestSellingLaptop/>
         </div>
     );

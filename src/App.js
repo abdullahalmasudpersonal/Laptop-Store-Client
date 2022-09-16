@@ -9,7 +9,7 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import ManageProducts from './Pages/ManageProducts/ManageProducts';
-import Prodcuts from './Pages/Products/Products/Prodcuts';
+import Products from './Pages/Products/Products';
 import Reviews from './Pages/Reviews/Reviews';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header2/Header';
@@ -20,7 +20,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/products' element={<Prodcuts />} />
+        <Route path='/products' element={<Products />} />
         <Route path='/reviews' element={<Reviews />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/connect-us' element={<ConnectUs />} />

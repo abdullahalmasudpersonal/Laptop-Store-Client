@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({product}) => {
-    const { _id, name, img, description, price, quantity, seller } = product;
+    const { _id, name, img, description, price, quantity, minOrder, brand } = product;
     const navigate = useNavigate();
 
     const navigateToUpdateInventory = _id =>{
-        navigate(`/prodcut/${_id}`); 
+        navigate(`/products/${_id}`); 
     }
 
     return (
@@ -15,11 +15,10 @@ const Product = ({product}) => {
             <img className='w-100' height='180px' src={img} alt='' />
             <div className='px-3'>
                 <h5 className='brandname'>{name}</h5>
+                <h6>Brand: {brand}</h6>
                 <h6>Price: ${price}</h6>
-                <p className='mb-1'>Quantity: {quantity}</p>
-                <strong>
-                    <p className='mb-1'>Seller: {seller}</p>
-                </strong>
+                <p className='mb-1'>Min.Order: {minOrder} Ps</p>
+                <p className='mb-1'>Available: {quantity} Ps</p>
                 <small>
                     <p className='mb-0'>{description}</p>
                 </small>

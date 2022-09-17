@@ -57,7 +57,7 @@ const Header2 = () => {
                                          <Link to='/my-item' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">My Item</a></Link>
                                      </li>
                                  </> */
-                                <>
+                               /*  <>
                                     <li class="nav-item">
                                         <Link to='/products' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="">Products</a></Link>
                                     </li>
@@ -73,7 +73,7 @@ const Header2 = () => {
                                     <li class="nav-item">
                                         <Link to='/connect-us' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Connect Us</a></Link>
                                     </li>
-                                </>
+                                </> */
                             }
                             {
                                 /*  user ?

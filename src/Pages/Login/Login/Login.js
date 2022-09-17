@@ -75,7 +75,7 @@ const Login = () => {
                         <div>
                             <SocialLogin />
                         </div>
-                        <p className='text-center new-to-site' style={{color:'gray'}}>New to WebSite? <Link to='/register' className='please-register-text-color pe-auto text-decoration-none'>Please Register</Link></p>
+                        <p className='text-center new-to-site ' style={{color:'gray'}}>New to WebSite? <Link to='/register' className='please-register-text-color pe-auto text-decoration-none'>Please Register</Link></p>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,16 @@
 }
 .addtocart-form textarea{
     width: 260px;
-    height: 40px;
+    height: 65px;
     border-radius: 7px;
     border: none;
+}
+.add-to-cart-button{
+    transition: .3s;
+    color: rgb(255, 249, 231);
+    background-color: rgb(104, 184, 255);
+}
+.add-to-cart-button:hover{
+    color: rgb(255, 241, 210);
+    background-color: rgb(44, 157, 255);
 }

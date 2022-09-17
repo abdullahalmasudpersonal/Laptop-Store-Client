@@ -22,6 +22,7 @@ const Home = () => {
             <CarouselFadeExample />
             {/* home product start */}
             <div className='inventories-bg'>
+                <h2 className='text-center pt-5 pb-3 fw-bold' style={{color:'rgb(12, 146, 255)'}}>Products</h2>
             <div className='container-xxl inventories py-5'>
                 {
                     products.slice(0,8).map(product => <Product key={product._id} product={product} />)

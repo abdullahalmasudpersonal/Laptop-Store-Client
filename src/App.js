@@ -14,12 +14,14 @@ import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import Products from './Pages/Products/Products';
 import Reviews from './Pages/Reviews/Reviews';
 import Footer from './Pages/Shared/Footer/Footer';
-import Header from './Pages/Shared/Header2/Header';
+import Header from './Pages/Shared/Header/Header';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div>
-      <Header />
+      <Header/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />
@@ -36,6 +38,7 @@ function App() {
         <Route path='/login' element={<Login />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

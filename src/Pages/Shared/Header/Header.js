@@ -60,7 +60,7 @@ const Header = () => {
 
 
                                         <li class="nav-item">
-                                            <Link to='/add-item' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Add Item</a></Link>
+                                            <Link to='/add-product' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Add Item</a></Link>
                                         </li>
                                         <li class="nav-item">
                                             <Link to='/manage-item' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Manage Item</a></Link>

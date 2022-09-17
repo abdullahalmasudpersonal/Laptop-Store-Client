@@ -17,16 +17,17 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
 
 function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />
         <Route path='/products/:productsId' element={<ProductDetail />} />
-        <Route path='/add-to-cart/:productsId' element={<AddToCart />} />
+        <Route path='/add-to-cart/:productsId' element={<RequireAuth><AddToCart /></RequireAuth>} />
         <Route path='/reviews' element={<Reviews />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/connect-us' element={<ConnectUs />} />

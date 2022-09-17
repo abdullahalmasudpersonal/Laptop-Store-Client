@@ -1,0 +1,28 @@
+.addtocart-bg{
+    background-color: rgb(246, 251, 255);
+    min-height: 800px;
+}
+.addtocart{
+    background-color: rgb(213, 235, 255);
+    margin: auto;
+    width: 300px;
+    min-height: 500px;
+    border-radius: 7px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.addtocart-form{
+    display: flex;
+    justify-content: center;
+}
+.addtocart-form input{
+    width: 260px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+}
+.addtocart-form textarea{
+    width: 260px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+}

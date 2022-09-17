@@ -1,13 +1,18 @@
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import UseProductDetail from '../../Hooks/UseProductDetail';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
     const { productsId } = useParams();
     const [products] = UseProductDetail(productsId);
+    const navigate = useNavigate();
+
+    const navigateToBuyNow = id => {
+        navigate(`/add-to-cart/${id}`);
+    }
 
     return (
         <div className=''>
@@ -42,7 +47,7 @@ const ProductDetail = () => {
                                 <p className='mb-1'>Features: {products.features}</p>
                             </div>
                             <div className='pt-4'>
-                                <button className='fw-bold buy-now-btn'>Buy Now</button>
+                                <button onClick={() => navigateToBuyNow(products._id)} className='fw-bold buy-now-btn'>Buy Now</button>
                             </div>
                         </div>
                     </div>

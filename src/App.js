@@ -3,6 +3,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.min';
 import About from './Pages/About/About';
 import AddProduct from './Pages/AddProduct/AddProduct';
+import AddToCart from './Pages/AddToCart/AddToCart';
 import Blogs from './Pages/Blogs/Blogs';
 import ConnectUs from './Pages/ConnectUs/ConnectUs';
 import Home from './Pages/Home/Home/Home';
@@ -23,6 +24,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />
         <Route path='/products/:productsId' element={<ProductDetail />} />
+        <Route path='/add-to-cart/:productsId' element={<AddToCart />} />
         <Route path='/reviews' element={<Reviews />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/connect-us' element={<ConnectUs />} />

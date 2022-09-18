@@ -2,14 +2,12 @@ import { Route, Routes } from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.min';
 import About from './Pages/About/About';
-import AddProduct from './Pages/AddProduct/AddProduct';
 import AddToCart from './Pages/AddToCart/AddToCart';
 import Blogs from './Pages/Blogs/Blogs';
 import ConnectUs from './Pages/ConnectUs/ConnectUs';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
-import ManageProducts from './Pages/ManageProducts/ManageProducts';
 import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import Products from './Pages/Products/Products';
 import Reviews from './Pages/Reviews/Reviews';
@@ -21,6 +19,8 @@ import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Profile from './Pages/Dashboard/Profile';
 import AddReview from './Pages/Dashboard/AddReview';
+import MyOrder from './Pages/Dashboard/MyOrder';
+import AddProduct from './Pages/Dashboard/AddProduct';
 
 function App() {
   return (
@@ -35,13 +35,11 @@ function App() {
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/connect-us' element={<ConnectUs />} />
         <Route path='/about' element={<About />} />
-        <Route path='/add-product' element={<AddProduct />} />
-        <Route path='/manage-products' element={<ManageProducts />} />
-        <Route path='/my-order' element={<ManageProducts />} />
         <Route path='/dashboard' element={<Dashboard />}>
           <Route index element={<Profile />} />
           <Route path='add-review' element={<AddReview />} />
           <Route path='add-product' element={<AddProduct />} />
+          <Route path='my-order' element={<MyOrder />} />
         </Route>
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />

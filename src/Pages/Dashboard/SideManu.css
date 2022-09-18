@@ -1,29 +1,81 @@
-
-.profile-dev{
+.profile-dev {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+/* ---------------- My Profile start ------------------------- */
+.profile-dev {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.profile-dev-part2 {
+    display: flex;
+}
+
+.profile-dev-part2 img {
+    width: 100px;
+}
+
+/* ---------------- My Profile end ----------------------------- */
+
 /*----------------------- add review start -------------------------*/
-.addreview-dev{
+.addreview-dev {
     width: 300px;
     min-height: 400px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: auto;
 }
-.review-form input{
+
+.review-form input {
     height: 40px;
     border-radius: 5px;
-    border:none;
+    border: none;
     background-color: aliceblue;
     padding-left: 10px;
 }
-.add-review-submit{
+
+.add-review-submit {
     color: rgb(255, 255, 255);
     transition: .3s;
     background-color: rgb(105, 185, 255) !important;
 }
-.add-review-submit:hover{
+
+.add-review-submit:hover {
     background-color: rgb(21, 146, 255) !important;
 }
+
 /*----------------------- add review end  -------------------------*/
+/* ---------------------- My order start -------------------------- */
+.order-calcel-btn {
+    border: none;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 130, 130);
+    transition: .3s;
+}
+
+.order-calcel-btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+}
+
+.order-payment-btn {
+    border: none;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(121, 123, 255);
+    transition: .3s;
+}
+.order-payment-btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(49, 62, 255);
+}
+
+/* ---------------------- My order end ---------------------------- */
+/* --------------------Add product start-------------- */
+.add-product-main{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* --------------------Add product end-------------- */

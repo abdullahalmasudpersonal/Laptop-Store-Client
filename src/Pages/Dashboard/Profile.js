@@ -2,7 +2,6 @@ import React from 'react';
 import auth from '../../Firebase.init';
 import profile from '../../Assets/img/logo/profile.png';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import './profile.css';
 import './SideManu.css';
 
 const Profile = () => {
@@ -20,8 +19,8 @@ const Profile = () => {
                         <img src={profile} alt='' />
                     </div>
                     <div className='ps-4 pt-3'>
-                        <h5 class="card-title">{user.displayName}</h5>
-                        <p class="card-text">{user.email}</p>
+                        <h5 class="card-title">{user?.displayName}</h5>
+                        <p class="card-text">{user?.email}</p>
                     </div>
                 </div>
             </div>

@@ -26,20 +26,7 @@ const Header = () => {
                     </button>
                     <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            {/*   <li class="nav-item">
-                                <Link to='/inventories' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="">Inventories</a></Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link to='/blogs' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Blogs</a></Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link to='/connect-us' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Connect Us</a></Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link to='/about' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">About</a></Link>
-                            </li> */}
                         </ul>
-
                         <div className='d-flex'>
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 {
@@ -60,17 +47,10 @@ const Header = () => {
                                         <li class="nav-item">
                                             <Link to='/blogs' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Blogs</a></Link>
                                         </li>
-
-
                                         <li class="nav-item">
-                                            <Link to='/add-product' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Add Item</a></Link>
+                                            <Link to='/dashboard' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Dashboard</a></Link>
                                         </li>
-                                        <li class="nav-item">
-                                            <Link to='/manage-item' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Manage Item</a></Link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <Link to='/my-item' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">My Item</a></Link>
-                                        </li>
+                                        
                                     </>
                                 }
                                 {
@@ -89,7 +69,7 @@ const Header = () => {
                                                 </div>
                                                 <div className='profile  pt-2 pb-2'>
                                                     <Link className='dashboard-btn' to='/dashboard'>
-                                                        <h6 className='fw-bold profile-view'>Dashboard</h6>
+                                                        <h6 className='fw-bold profile-view'>View Profile</h6>
                                                     </Link>
                                                 </div>
                                                 <li className='dropdown2'>

@@ -32,12 +32,12 @@ const Dashboard = () => {
                                 <li className='dashboard-list-item ps-3 mb-2'>Add Product
                                 </li>
                             </Link>
-                            <Link to='/dashboard' className='text-decoration-none'>
-                                <li className='dashboard-list-item ps-3 mb-2'>My Order
+                            <Link to='/dashboard/manage-product' className='text-decoration-none'>
+                                <li className='dashboard-list-item ps-3 mb-2'>Manage Product
                                 </li>
                             </Link>
                             <Link to='/dashboard' className='text-decoration-none'>
-                                <li className='dashboard-list-item ps-3 mb-2'>My Order
+                                <li className='dashboard-list-item ps-3 mb-2'>Manage All Orders
                                 </li>
                             </Link>
                             <Link to='/dashboard' className='text-decoration-none'>

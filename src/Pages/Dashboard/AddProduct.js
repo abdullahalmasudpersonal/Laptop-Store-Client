@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data, e) => {
-        const url = `http://localhost:5000/review`;
+        const url = `http://localhost:5000/products`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -18,7 +18,7 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                toast.success('Add Review')
+                toast.success('Add product')
                 e.target.reset();
             })
     };
@@ -70,23 +70,12 @@ const AddProduct = () => {
 
                             <input className='mb-2' placeholder='Product Photo URL' type='text' {...register("img", { required: true })} />
 
-                            <input type="submit" value='Add Review' className='add-review-submit fw-bold' />
+                            <input type="submit" value='Add Product' className='add-review-submit fw-bold' />
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    /*     <div className='col'>
-            <div className='card border-0 add-product-main'>
-                <div className='pt-4 ps-4'>
-                    <h4 className='fw-bold side-header'>Add Product</h4>
-                </div>
-                <hr />
-                <div class="card-body pt-2 pb-4 ps-4 pr-4 profile-dev-part2">
-                   
-                </div>
-            </div>
-        </div> */
     );
 };
 

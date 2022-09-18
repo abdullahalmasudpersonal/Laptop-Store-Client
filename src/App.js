@@ -18,6 +18,9 @@ import Header from './Pages/Shared/Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Profile from './Pages/Dashboard/Profile';
+import AddReview from './Pages/Dashboard/AddReview';
 
 function App() {
   return (
@@ -35,6 +38,11 @@ function App() {
         <Route path='/add-product' element={<AddProduct />} />
         <Route path='/manage-products' element={<ManageProducts />} />
         <Route path='/my-order' element={<ManageProducts />} />
+        <Route path='/dashboard' element={<Dashboard />}>
+          <Route index element={<Profile />} />
+          <Route path='add-review' element={<AddReview />} />
+          <Route path='add-product' element={<AddProduct />} />
+        </Route>
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
       </Routes>

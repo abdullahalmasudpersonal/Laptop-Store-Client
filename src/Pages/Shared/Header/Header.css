@@ -66,6 +66,15 @@
     padding: 10px 20px;
     border-radius: 50px;
     cursor: pointer;
+    color: #00226d !important;
     color: rgb(0, 52, 100);
-    background-color:rgb(221, 234, 255);
+    background-color:rgb(152, 205, 255);
+    transition: .3s;
+}
+.profile-view:hover{
+    background-color: #6da7ff;
+}
+.dashboard-btn{
+    background-color: #eff8fd !important;
+    color: rgb(3, 32, 110);
 }

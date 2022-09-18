@@ -1,0 +1,29 @@
+
+.profile-dev{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*----------------------- add review start -------------------------*/
+.addreview-dev{
+    width: 300px;
+    min-height: 400px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: auto;
+}
+.review-form input{
+    height: 40px;
+    border-radius: 5px;
+    border:none;
+    background-color: aliceblue;
+    padding-left: 10px;
+}
+.add-review-submit{
+    color: rgb(255, 255, 255);
+    transition: .3s;
+    background-color: rgb(105, 185, 255) !important;
+}
+.add-review-submit:hover{
+    background-color: rgb(21, 146, 255) !important;
+}
+/*----------------------- add review end  -------------------------*/

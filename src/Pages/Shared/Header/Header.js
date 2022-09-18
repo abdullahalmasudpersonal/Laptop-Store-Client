@@ -20,7 +20,7 @@ const Header = () => {
         <div className='sticky-top'>
             <nav class="navbar navbar-expand-lg navber-bg px-2">
                 <div class="container">
-                    <Link to='/'><a class="navbar-brand"> <img src={logo}  height='40px' alt='' /></a></Link>
+                    <Link to='/'><a class="navbar-brand"> <img src={logo} height='40px' alt='' /></a></Link>
                     <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -55,6 +55,9 @@ const Header = () => {
                                             <Link to='/connect-us' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Connect Us</a></Link>
                                         </li>
                                         <li class="nav-item">
+                                            <Link to='/reviews' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Reviews</a></Link>
+                                        </li>
+                                        <li class="nav-item">
                                             <Link to='/blogs' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Blogs</a></Link>
                                         </li>
 
@@ -84,34 +87,36 @@ const Header = () => {
                                                 <div className='profile profile-displayname'>
                                                     <p className='mb-0 px-2'>{user.email}</p>
                                                 </div>
-                                                <div className='profile pt-2 pb-2'>
-                                                    <h6 className='fw-bold profile-view'>View Profile</h6>
+                                                <div className='profile  pt-2 pb-2'>
+                                                    <Link className='dashboard-btn' to='/dashboard'>
+                                                        <h6 className='fw-bold profile-view'>Dashboard</h6>
+                                                    </Link>
                                                 </div>
                                                 <li className='dropdown2'>
                                                     <Link to='/my-item'>
                                                         <div className='d-flex justify-content-between align-items-center'>
-                                                            <a style={{ color: 'gray' }}>My Order</a>
+                                                            <a style={{ color: 'gray', fontWeight:'bold' }}>My Order</a>
                                                         </div>
                                                     </Link>
                                                 </li>
                                                 <li className='dropdown2'>
                                                     <Link to='/add-item'>
                                                         <div className='d-flex justify-content-between align-items-center'>
-                                                            <a style={{ color: 'gray' }}>Add Product</a>
+                                                            <a style={{ color: 'gray', fontWeight:'bold' }}>Add Product</a>
                                                         </div>
                                                     </Link>
                                                 </li>
                                                 <li className='dropdown2'>
                                                     <Link to='/manage-item'>
                                                         <div className='d-flex justify-content-between align-items-center'>
-                                                            <a style={{ color: 'gray' }}>Manage Product</a>
+                                                            <a style={{ color: 'gray', fontWeight:'bold' }}>Manage Product</a>
                                                         </div>
                                                     </Link>
                                                 </li>
                                                 <li className='dropdown2'>
                                                     <Link to='/register'>
                                                         <div className='d-flex justify-content-between align-items-center'>
-                                                            <a style={{ color: 'gray' }}> <FontAwesomeIcon icon={faSignOut} style={{ color: 'gray' }} className='' /> Register</a>
+                                                            <a style={{ color: 'gray', fontWeight:'bold' }}> <FontAwesomeIcon icon={faSignOut} style={{ color: 'gray' }} className='' /> Register</a>
                                                         </div>
                                                     </Link>
                                                 </li>

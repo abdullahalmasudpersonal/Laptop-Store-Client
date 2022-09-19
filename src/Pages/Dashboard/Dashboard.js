@@ -21,6 +21,10 @@ const Dashboard = () => {
                             <Link to='/dashboard' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>My Profile</li>
                             </Link>
+                            <Link to='/dashboard' className='text-decoration-none'>
+                                <li className='dashboard-list-item ps-3 mb-2'>Address
+                                </li>
+                            </Link>
                             <Link to='/dashboard/add-review' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>Add Review</li>
                             </Link>
@@ -36,20 +40,16 @@ const Dashboard = () => {
                                 <li className='dashboard-list-item ps-3 mb-2'>Manage Product
                                 </li>
                             </Link>
-                            <Link to='/dashboard' className='text-decoration-none'>
+                            <Link to='/dashboard/manage-all-orders' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>Manage All Orders
                                 </li>
                             </Link>
                             <Link to='/dashboard' className='text-decoration-none'>
-                                <li className='dashboard-list-item ps-3 mb-2'>My Order
+                                <li className='dashboard-list-item ps-3 mb-2'>Payment History
                                 </li>
                             </Link>
                             <Link to='/dashboard' className='text-decoration-none'>
-                                <li className='dashboard-list-item ps-3 mb-2'>My Order
-                                </li>
-                            </Link>
-                            <Link to='/dashboard' className='text-decoration-none'>
-                                <li className='dashboard-list-item ps-3 mb-2'>My Order
+                                <li className='dashboard-list-item ps-3 mb-2'>Make Admin
                                 </li>
                             </Link>
                             <Link to='/dashboard' className='text-decoration-none'>

@@ -9,7 +9,7 @@
     align-content: center;
 }
 .login-dev{
-    min-height: 450px;
+    height: 450px;
     width: 280px;
     background-color: rgb(223, 240, 255);
     border-radius: 5px;
@@ -18,28 +18,22 @@
 .login-color{
     color: rgb(67, 167, 255);
 }
-.input-field{
-    padding-top: 10px;
+.login-form-dev{
     display: flex;
     justify-content: center;
 }
-.input-field input{
+.login-form-dev input{
     width: 250px;
     height: 37px;
     border-radius: 50px;
-}
-.input-field input:hover{
     border: none;
+    margin: 7px auto;
 }
-.reset-password{
-    color: gray;
-    transition: .3s;
-}
-.reset-password:hover{
+.login-forget-btn{
     cursor: pointer;
-    color: red;
+    text-align: center;
+    color: rgb(75, 75, 75);
 }
-.please-register-text-color:hover{
-    transition: .3s;
-    color: rgb(0, 153, 255);
+.login-forget-btn:hover{
+    color: red;
 }

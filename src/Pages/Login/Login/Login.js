@@ -1,21 +1,63 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useRef } from 'react';
 import './Login.css';
 import logo from '../../../Assets/img/logo/images__2___1_-removebg-preview.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
-/* import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'; */
-/* import auth from '../../../Firebase.init'; */
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../Firebase.init';
+import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../Hooks/UseToken';
+import { toast } from 'react-toastify';
 
 const Login = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    /*  const [
-         signInWithEmailAndPassword,
-         user,
-         loading,
-         error,
-     ] = useSignInWithEmailAndPassword(auth); */
+    const emailRef = useRef('');
+    const passwrodRef = useRef('');
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    let from = location.state?.from?.pathname || '/';
+    let errorElement;
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [token] = useToken(user);
+    if (loading || sending) {
+        return <Loading />
+    }
+
+    if (token) {
+        navigate(from, { replace: true });
+    }
+
+    if (error) {
+        errorElement =
+            <p className='text-danger'>{error?.message} </p>
+    }
+
+    const handleSubmit = async event => {
+        event.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwrodRef.current.value;
+
+        await signInWithEmailAndPassword(email, password);
+    }
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('send email');
+        }
+        else {
+            toast('Please enter your email address')
+        }
+    }
 
     return (
         <div className='login-bg'>
@@ -26,56 +68,19 @@ const Login = () => {
                             <img width='100px' src={logo} alt='' />
                         </div>
                         <h4 className='text-center pt-3 login-color'>Login</h4>
-                        <form /* onSubmit={handleSubmit(onSubmit)}  */ className='login-form'>
-                            <div className='input-field'>
-                                <input className='login-input border-0' type='email'
-                                    placeholder=' Email' autoComplete="off"
-                                    {...register("email", {
-                                        required: {
-                                            value: true,
-                                            message: 'Email is Required'
-                                        },
-                                        pattern: {
-                                            value: /[a-z0-9]+[a-z]+\.[a-z]{2,3}/,
-                                            message: 'Provide a valid Email'
-                                        }
-                                    })}
-                                />
-                                <label className='label ml-12'>
-                                    {errors.email?.type === 'required' && <span className='text-red-500'>{errors.email.message}</span>}
-                                    {errors.email?.type === 'pattern' && <span className='text-red-500'>{errors.email.message}</span>}
-                                </label>
-                            </div>
-
-                            <div className='input-field'>
-                                <input className='login-input border-0' type='password'
-                                    placeholder=' Password' autocomplete="off"
-                                    {...register("password", {
-                                        required: {
-                                            value: true,
-                                            message: 'Password is Required'
-                                        },
-                                        minLength: {
-                                            value: 6,
-                                            message: 'Must be 6 characters or longer'
-                                        }
-                                    })}
-                                />
-                                <label className='label ml-12 '>
-                                    {errors.password?.type === 'required' && <span className='text-red-500'>{errors.password.message}</span>}
-                                    {errors.password?.type === 'minLength' && <span className='text-red-500'>{errors.password.message}</span>}
-                                </label>
-                            </div>
-                            {/* {signInError} */}
-                            <div className='d-flex justify-content-center pt-3 input-field'>
-                                <input type='submit' className='continue-with-google border-0' value='Login' />
-                            </div>
+                      <div className='login-form-dev'>
+                      <form onSubmit={handleSubmit}>
+                            <input type='email' ref={emailRef} placeholder='Email' name='' required /> <br />
+                            <input type='password' ref={passwrodRef} placeholder='Password' name='' required /> <br />
+                            <p className='mb-0 login-forget-btn '><span onClick={resetPassword} >Froget password</span></p>
+                            <input className='fw-bold submit' type='submit' name='' value='login' />
                         </form>
-                        <p className='text-center reset-password pt-1 fw-bold'>Reset Password</p>
+                      </div>
+                        <p className='text-center'>{errorElement}</p>
                         <div>
                             <SocialLogin />
                         </div>
-                        <p className='text-center new-to-site ' style={{color:'gray'}}>New to WebSite? <Link to='/register' className='please-register-text-color pe-auto text-decoration-none'>Please Register</Link></p>
+                        <p className='text-center new-to-site ' style={{ color: 'gray' }}>New to WebSite? <Link to='/register' className='please-register-text-color pe-auto text-decoration-none'>Please Register</Link></p>
                     </div>
                 </div>
             </div>

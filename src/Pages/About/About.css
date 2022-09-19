@@ -1,0 +1,9 @@
+.about-bg{
+    background-color: rgb(247, 251, 255);
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}

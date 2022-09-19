@@ -1,9 +1,12 @@
 import React from 'react';
+import './Blogs.css';
 
 const Blogs = () => {
     return (
-        <div className='container'>
-            <h5>Blogs</h5>
+        <div className='blogs-bg'>
+            <div className='container blogs'>
+                <h5>Blogs Comming soon...</h5>
+            </div>
         </div>
     );
 };

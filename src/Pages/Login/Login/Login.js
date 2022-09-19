@@ -73,7 +73,7 @@ const Login = () => {
                             <input type='email' ref={emailRef} placeholder='Email' name='' required /> <br />
                             <input type='password' ref={passwrodRef} placeholder='Password' name='' required /> <br />
                             <p className='mb-0 login-forget-btn '><span onClick={resetPassword} >Froget password</span></p>
-                            <input className='fw-bold submit' type='submit' name='' value='login' />
+                            <input className='fw-bold login-submit-btn' type='submit' name='' value='login' />
                         </form>
                       </div>
                         <p className='text-center'>{errorElement}</p>

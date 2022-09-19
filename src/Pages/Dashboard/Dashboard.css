@@ -4,11 +4,6 @@
 
 }
 
-.dashboard-dev1 {
-    width: 240px;
-    height: 800px;
-    background-color: aqua;
-}
 
 .dashboard-dev2 {
     width: 300px;
@@ -26,7 +21,7 @@
 
 .dashboard-list-item {
     list-style-type: none;
-    background-color: rgb(126, 218, 255);
+    background-color: rgb(173, 232, 255);
     height: 41px;
     display: flex;
     justify-content: start;
@@ -38,7 +33,7 @@
 }
 
 .dashboard-list-item:hover {
-    background-color: rgb(83, 172, 255);
+    background-color: rgb(130, 209, 255);
 }
 
 @media screen and (max-width:767px) {

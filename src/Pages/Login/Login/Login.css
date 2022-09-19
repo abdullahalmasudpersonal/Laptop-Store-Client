@@ -37,3 +37,10 @@
 .login-forget-btn:hover{
     color: red;
 }
+.login-submit-btn{
+    transition: .3s;
+    background: #c5e4ff;
+}
+.login-submit-btn:hover{
+    background-color: rgb(181, 221, 255);
+}

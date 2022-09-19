@@ -1,9 +1,12 @@
 import React from 'react';
+import './ConnectUs.css';
 
 const ConnectUs = () => {
     return (
-        <div className='container'>
-            <h5>connect Us</h5>
+        <div className='connect-us-bg'>
+            <div className='container connect-us'>
+                <h5>ConnectUs...</h5>
+            </div>
         </div>
     );
 };

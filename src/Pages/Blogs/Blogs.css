@@ -1,0 +1,11 @@
+
+.blogs-bg{
+    background-color: rgb(247, 251, 255);
+}
+.blogs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    
+}

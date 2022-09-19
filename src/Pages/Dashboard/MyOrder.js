@@ -19,10 +19,10 @@ const MyOrder = () => {
             }
             catch (error) {
                 console.log(error.message);
-                /* if (error.response.status === 401 || error.response.status === 403) {
+                 if (error.response.status === 401 || error.response.status === 403) {
                     signOut(auth);
                     navigate('/login')
-                } */
+                } 
             }
         }
         getOrders();

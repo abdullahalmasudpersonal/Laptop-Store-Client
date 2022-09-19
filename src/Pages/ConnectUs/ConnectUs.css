@@ -1,0 +1,9 @@
+.connect-us-bg{
+    background-color: rgb(247, 251, 255);
+}
+.connect-us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}

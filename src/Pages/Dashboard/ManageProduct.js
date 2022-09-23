@@ -7,7 +7,7 @@ const ManageProduct = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://laptop-stores01.herokuapp.com/products/${id}`;
             console.log('url', url);
             fetch(url, {
                 method: 'DELETE'

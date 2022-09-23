@@ -2,18 +2,21 @@ import React from 'react';
 import './Header.css';
 import logo from '../../../Assets/img/logo/images__2___1_-removebg-preview.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignOut } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faClipboard, faClipboardList, faComment, faMoon, faSignOut, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import profile from '../../../Assets/img/logo/profile.png';
 import { signOut } from 'firebase/auth';
 import auth from '../../../Firebase.init';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const [user] = useAuthState(auth);
-    console.log(user)
+    const navigate = useNavigate()
     const handleSignOut = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
+        navigate('/');
     }
 
     return (
@@ -29,29 +32,26 @@ const Header = () => {
                         </ul>
                         <div className='d-flex'>
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <Link to='/products' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="">Product</a></Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link to='/about' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">About</a></Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link to='/connect-us' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Connect Us</a></Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link to='/reviews' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Reviews</a></Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link to='/blogs' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Blogs</a></Link>
+                                </li>
                                 {
                                     user &&
-                                    <>
-                                        <li class="nav-item">
-                                            <Link to='/products' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="">Product</a></Link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <Link to='/about' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">About</a></Link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <Link to='/connect-us' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Connect Us</a></Link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <Link to='/reviews' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Reviews</a></Link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <Link to='/blogs' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Blogs</a></Link>
-                                        </li>
-                                        <li class="nav-item">
-                                            <Link to='/dashboard' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Dashboard</a></Link>
-                                        </li>
-                                        
-                                    </>
+                                    <li class="nav-item">
+                                        <Link to='/dashboard' style={{ textDecoration: 'none' }}><a class="nav-link active fw-bold" aria-current="page" href="#">Dashboard</a></Link>
+                                    </li>
                                 }
                                 {
                                     user ?
@@ -72,31 +72,39 @@ const Header = () => {
                                                         <h6 className='fw-bold profile-view'>View Profile</h6>
                                                     </Link>
                                                 </div>
+                                                <hr className='m-0 p-0' />
                                                 <li className='dropdown2'>
-                                                    <Link to='/my-item'>
+                                                    <Link to='/register'>
                                                         <div className='d-flex justify-content-between align-items-center'>
-                                                            <a style={{ color: 'gray', fontWeight:'bold' }}>My Order</a>
-                                                        </div>
-                                                    </Link>
-                                                </li>
-                                                <li className='dropdown2'>
-                                                    <Link to='/add-item'>
-                                                        <div className='d-flex justify-content-between align-items-center'>
-                                                            <a style={{ color: 'gray', fontWeight:'bold' }}>Add Product</a>
-                                                        </div>
-                                                    </Link>
-                                                </li>
-                                                <li className='dropdown2'>
-                                                    <Link to='/manage-item'>
-                                                        <div className='d-flex justify-content-between align-items-center'>
-                                                            <a style={{ color: 'gray', fontWeight:'bold' }}>Manage Product</a>
+                                                            <a style={{ color: 'gray', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faBookmark} style={{ color: 'gray' }} className='' /> Bookmarks</a>
                                                         </div>
                                                     </Link>
                                                 </li>
                                                 <li className='dropdown2'>
                                                     <Link to='/register'>
                                                         <div className='d-flex justify-content-between align-items-center'>
-                                                            <a style={{ color: 'gray', fontWeight:'bold' }}> <FontAwesomeIcon icon={faSignOut} style={{ color: 'gray' }} className='' /> Register</a>
+                                                            <a style={{ color: 'gray', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faClipboardList} style={{ color: 'gray' }} className='' /> My Order</a>
+                                                        </div>
+                                                    </Link>
+                                                </li>
+                                                <li className='dropdown2'>
+                                                    <Link to='/register'>
+                                                        <div className='d-flex justify-content-between align-items-center'>
+                                                            <a style={{ color: 'gray', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faComment} style={{ color: 'gray' }} className='' /> Add Review</a>
+                                                        </div>
+                                                    </Link>
+                                                </li>
+                                                <li className='dropdown2'>
+                                                    <Link to='/register'>
+                                                        <div className='d-flex justify-content-between align-items-center'>
+                                                            <a style={{ color: 'gray', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faMoon} style={{ color: 'gray' }} className='' /> Darkmode</a>
+                                                        </div>
+                                                    </Link>
+                                                </li>
+                                                <li className='dropdown2'>
+                                                    <Link to='/register'>
+                                                        <div className='d-flex justify-content-between align-items-center'>
+                                                            <a style={{ color: 'gray', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faUserPlus} style={{ color: 'gray' }} className='' /> Register</a>
                                                         </div>
                                                     </Link>
                                                 </li>

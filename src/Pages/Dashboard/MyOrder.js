@@ -1,49 +1,53 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
-import axiosPrivate from '../../API/axios.Private';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase.init';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
+
     useEffect(() => {
-        const getOrders = async () => {
-            const email = user?.email;
-            const url = `http://localhost:5000/order?email=${email}`;
-            try {
-                const { data } = await axiosPrivate.get(url);
-                setOrders(data);
-            }
-            catch (error) {
-                console.log(error.message);
-                 if (error.response.status === 401 || error.response.status === 403) {
-                    signOut(auth);
-                    navigate('/login')
-                } 
-            }
-        }
-        getOrders();
-
-    }, [user]);
-
-        const handleMyItemDelete = id => {
-            const proceed = window.confirm('Are you sure?')
-            if (proceed) {
-                const url = `http://localhost:5000/order/${id}`;
-                fetch(url, {
-                    method: 'DELETE'
+        if (user) {
+            fetch(`http://localhost:5000/myorder?email=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    console.log('res', res);
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accesToken');
+                        navigate('/');
+                    }
+                    return res.json()
                 })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        const remaining = orders.filter(order => order._id !== id);
-                        setOrders(remaining);
-                    })
-            }
-        } 
+                .then(data => {
+                    setOrders(data);
+                });
+        }
+    }, [user])
+
+    const handleMyOrderDelete = id => {
+        const proceed = window.confirm('Are you sure?')
+        if (proceed) {
+            const url = `http://localhost:5000/myorder/${id}`;
+            console.log('masud',url)
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = orders.filter(order => order._id !== id);
+                    setOrders(remaining);
+                })
+        }
+    }
 
 
     return (
@@ -61,6 +65,7 @@ const MyOrder = () => {
                                     <th scope="col">SL</th>
                                     <th scope="col">Product Name</th>
                                     <th scope="col">Quentity</th>
+                                    <th scope="col">Price</th>
                                     <th scope="col">Cancel</th>
                                     <th scope="col">Payment</th>
                                 </tr>
@@ -71,8 +76,14 @@ const MyOrder = () => {
                                         <th scope="row">{index + 1}</th>
                                         <td>{order.product}</td>
                                         <td>{order.minOrder} Ps</td>
-                                        <td><button onClick={() => handleMyItemDelete(order._id)}  className=' order-calcel-btn'>Cancel</button></td>
-                                        <td><button className='order-payment-btn'>Pay</button></td>
+                                        <td>{order.productPrice} $</td>
+                                        <td><button onClick={() => handleMyOrderDelete(order._id)} className=' order-calcel-btn'>Cancel</button></td>
+                                        {/* <td>{(order.productPrice && !order.paid) && <Link  /> <button className='order-payment-btn'>Pay</button>}</td> */}
+
+                                        <td>
+                                            {(order.productPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='order-payment-btn'>Pay</button></Link>}
+                                            {(order.productPrice && order.paid) && <p className='text-success'>Paid</p>}
+                                            </td>
                                     </tr>)}
                             </tbody>
                         </table>

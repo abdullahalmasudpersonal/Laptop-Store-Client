@@ -4,9 +4,12 @@ import './Dashboard.css';
 import profile from '../../Assets/img/logo/profile.png';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
+import UseAdmin from '../../Hooks/UseAdmin';
+
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
+    const [admin] = UseAdmin(user);
 
     return (
         <div className='container-lg py-5'>
@@ -21,38 +24,38 @@ const Dashboard = () => {
                             <Link to='/dashboard' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>My Profile</li>
                             </Link>
-                            <Link to='/dashboard' className='text-decoration-none'>
+                            <Link to='/dashboard/address' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>Address
                                 </li>
                             </Link>
-                            <Link to='/dashboard/add-review' className='text-decoration-none'>
+                            { !admin && <Link to='/dashboard/add-review' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>Add Review</li>
-                            </Link>
+                            </Link>}
                             <Link to='/dashboard/my-order' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>My Order
                                 </li>
                             </Link>
-                            <Link to='/dashboard/add-product' className='text-decoration-none'>
+                            {admin && <Link to='/dashboard/add-product' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>Add Product
                                 </li>
-                            </Link>
-                            <Link to='/dashboard/manage-product' className='text-decoration-none'>
+                            </Link>}
+                            {admin && <Link to='/dashboard/manage-product' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>Manage Product
                                 </li>
-                            </Link>
-                            <Link to='/dashboard/manage-all-orders' className='text-decoration-none'>
+                            </Link>}
+                            {admin && <Link to='/dashboard/manage-all-orders' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>Manage All Orders
                                 </li>
-                            </Link>
+                            </Link>}
                             <Link to='/dashboard' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>Payment History
                                 </li>
                             </Link>
-                            <Link to='/dashboard' className='text-decoration-none'>
+                            {admin && <Link to='/dashboard/users' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>Make Admin
                                 </li>
-                            </Link>
-                            <Link to='/dashboard' className='text-decoration-none'>
+                            </Link>}
+                            {/* <Link to='/dashboard' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>My Order
                                 </li>
                             </Link>
@@ -67,7 +70,7 @@ const Dashboard = () => {
                             <Link to='/dashboard' className='text-decoration-none'>
                                 <li className='dashboard-list-item ps-3 mb-2'>My Order
                                 </li>
-                            </Link>
+                            </Link> */}
                         </ul>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ const CheckoutForm = ({ myorder }) => {
     const { _id, productPrice, userName,email } = myorder;
 
     useEffect(() => {
-        fetch('https://laptop-stores01.herokuapp.com/create-payment-intent', {
+        fetch('https://fathomless-forest-12893.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -78,7 +78,7 @@ const CheckoutForm = ({ myorder }) => {
                 myorder: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://laptop-stores01.herokuapp.com/order/${_id}`,{
+            fetch(`https://fathomless-forest-12893.herokuapp.com/order/${_id}`,{
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

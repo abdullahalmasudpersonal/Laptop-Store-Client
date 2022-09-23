@@ -24,7 +24,7 @@ const AddToCart = () => {
             minOrder: event.target.minOrder.value,
             phone: event.target.phone.value
         }
-        axios.post('https://laptop-stores01.herokuapp.com/order', order)
+        axios.post('https://fathomless-forest-12893.herokuapp.com/order', order)
             .then(response => {
                 console.log(response)
                 const { data } = response;

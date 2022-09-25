@@ -7,7 +7,7 @@ const AddReview = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data, e) => {
-        const url = `https://fathomless-forest-12893.herokuapp.com/review`;
+        const url = `https://laptop-server-new.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {

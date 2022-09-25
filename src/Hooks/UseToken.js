@@ -6,7 +6,7 @@ const UseToken = user => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://fathomless-forest-12893.herokuapp.com/user/${email}`, {
+            fetch(`https://laptop-server-new.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -68,7 +68,7 @@ const useToken = user => {
             const email = user?.user?.email;
             const currentUser = {email: email};
             if (email) {
-                fetch(`http://localhost:3000/user/${email}`,{
+                fetch(`https://laptop-server-new.herokuapp.com/user/${email}`,{
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'
@@ -79,7 +79,7 @@ const useToken = user => {
                 .then(data => {
                     console.log('data inside useToken', data);
                 })
-                const { data } = await axios.post('http://localhost:3000/user', { email });
+                const { data } = await axios.post('https://laptop-server-new.herokuapp.com/user', { email });
                 setToken(data.accessToken);
                 localStorage.setItem('accessToken', data.accessToken); 
             }

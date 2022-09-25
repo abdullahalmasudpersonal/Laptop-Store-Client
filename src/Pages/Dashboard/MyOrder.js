@@ -11,7 +11,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://fathomless-forest-12893.herokuapp.com/myorder?email=${user.email}`, {
+            fetch(`https://laptop-server-new.herokuapp.com/myorder?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const MyOrder = () => {
     const handleMyOrderDelete = id => {
         const proceed = window.confirm('Are you sure?')
         if (proceed) {
-            const url = `https://fathomless-forest-12893.herokuapp.com/myorder/${id}`;
+            const url = `https://laptop-server-new.herokuapp.com/myorder/${id}`;
             console.log('masud',url)
             fetch(url, {
                 method: 'DELETE'

@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L1TQBAiM96NUDH8x6SIFy0s3xqVdItXjnM0v
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://fathomless-forest-12893.herokuapp.com/myorder/${id}`;
+    const url = `https://laptop-server-new.herokuapp.com/myorder/${id}`;
 
     const { data: myorder, isLoading } = useQuery(['myorder', id], () => fetch(url, {
         method: 'GET',

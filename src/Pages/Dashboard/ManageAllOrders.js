@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://fathomless-forest-12893.herokuapp.com/order`, {
+            fetch(`https://laptop-server-new.herokuapp.com/order`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const ManageAllOrders = () => {
     const handleCoustomerOrderDelete = id => {
         const proceed = window.confirm('Are you sure?')
         if (proceed) {
-            const url = `https://fathomless-forest-12893.herokuapp.com/order/${id}`;
+            const url = `https://laptop-server-new.herokuapp.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

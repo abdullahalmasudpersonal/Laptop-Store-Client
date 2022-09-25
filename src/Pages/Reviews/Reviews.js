@@ -6,7 +6,7 @@ const Reviews = () => {
     const [review, setReview] = useState([]);
 
     useEffect( () =>{
-        fetch('https://fathomless-forest-12893.herokuapp.com/review')
+        fetch('https://laptop-server-new.herokuapp.com/review')
         .then(res => res.json())
         .then(data => setReview(data));
     },[]);

@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://laptop-server-new.herokuapp.com/order`, {
+            fetch(`http://localhost:5000/order`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const ManageAllOrders = () => {
     const handleCoustomerOrderDelete = id => {
         const proceed = window.confirm('Are you sure?')
         if (proceed) {
-            const url = `https://laptop-server-new.herokuapp.com/order/${id}`;
+            const url = `http://localhost:5000/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

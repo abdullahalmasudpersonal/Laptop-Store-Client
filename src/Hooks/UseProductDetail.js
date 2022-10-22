@@ -4,7 +4,7 @@ const UseProductDetail = productsId => {
     const [products, setProducts] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${productsId}`;
+        const url = `https://agile-sierra-69764.herokuapp.com/products/${productsId}`;
 
         fetch(url)
             .then(res => res.json())

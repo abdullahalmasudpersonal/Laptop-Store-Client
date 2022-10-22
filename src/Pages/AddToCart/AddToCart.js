@@ -24,7 +24,7 @@ const AddToCart = () => {
             minOrder: event.target.minOrder.value,
             phone: event.target.phone.value
         }
-        axios.post('http://localhost:5000/order', order)
+        axios.post('https://agile-sierra-69764.herokuapp.com/order', order)
             .then(response => {
                 console.log(response)
                 const { data } = response;

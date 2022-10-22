@@ -7,7 +7,7 @@ const AddReview = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data, e) => {
-        const url = `http://localhost:5000/review`;
+        const url = `https://agile-sierra-69764.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {

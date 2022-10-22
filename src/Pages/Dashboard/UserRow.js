@@ -6,7 +6,7 @@ import auth from '../../Firebase.init';
 const UserRow = ({ user, index, refetch }) => {
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://agile-sierra-69764.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -29,7 +29,7 @@ const UserRow = ({ user, index, refetch }) => {
 /*     const handleUserDelete = id => {
         const proceed = window.confirm('Are you sure?')
         if (proceed) {
-            const url = `http://localhost:5000/user/${id}`;
+            const url = `https://agile-sierra-69764.herokuapp.com/user/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

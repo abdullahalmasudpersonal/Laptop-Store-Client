@@ -27,6 +27,7 @@ import Users from './Pages/Dashboard/Users';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import Address from './Pages/Dashboard/Address';
 import Payment from './Pages/Dashboard/Payment';
+import OrderHistory from './Pages/Dashboard/OrderHistory';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route path='manage-product' element={<ManageProduct />} />
           <Route path='manage-all-orders' element={<ManageAllOrders />} />
           <Route path='payment/:id' element={<Payment />} />
+          <Route path='order-history' element={<OrderHistory />} />
           <Route path='users' element={<RequireAdmin><Users /></RequireAdmin>} />
         </Route>
         <Route path='/register' element={<Register />} />
